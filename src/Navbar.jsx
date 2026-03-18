@@ -4,6 +4,8 @@ import Subject from "./Subject";
 import Action from "./AcionState";
 import Change from "./Change";
 import Users from "./Users";
+import Useradd from "./userAdd";
+import EditUser from "./editUser";
 
 export default function Navbar(){
     return(
@@ -41,6 +43,12 @@ export default function Navbar(){
                 >
                     Users
                 </Link>
+                <Link 
+                    to="/UserAdd" 
+                    className="px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                    User Add
+                </Link>
             </div>
         </nav> 
         <Routes>
@@ -50,6 +58,8 @@ export default function Navbar(){
             <Route path="/Change" element={<Change />} />
             <Route path="/Users" element={<Users />} />
             <Route path="/" element={<h1 className="text-4xl font-bold text-center mt-10 text-emerald-700">Home</h1>} />
+            <Route path="/UserAdd" element={<Useradd />} />
+            <Route path="/editUser/:id" element={<EditUser />} />
         </Routes>
         </>
     )
